@@ -1,4 +1,4 @@
-.show img{
+.pic{
   width: 90px;
   height: 120px;
   margin: 10px;
@@ -50,7 +50,7 @@
 .button{
   width: 95%;
   height: 50px;
-  background-color: #359A35;
+  background-color: #f10215;
   border-radius: 7px;
   margin: 10px auto;
   text-align: center;
@@ -77,4 +77,64 @@
 }
 .dele .del:hover{
   cursor: pointer;
+}
+.out .list .right{
+  width: 230px;
+  height: 120px;
+}
+.out .list li{
+  border-bottom: 1px solid #9d9d9d;
+  position: relative;
+}
+.checkbox{
+  position: absolute;
+  top: 70px;
+  left: 0px;
+}
+.out .list img{
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.edit{
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  right: 0px;
+  top: 60px;
+}
+.edit .cancel,.check{
+  display: inline-block;
+  font-size: 16px;
+  color: #4D6CB0;
+}
+.edit .cancel,.check:hover{
+  cursor: pointer;
+}
+.edit .check{
+  padding-left: 20px;
+  color: #FF6835;
+}
+.out .list .no{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: url("../../../static/no.png") no-repeat;
+  background-size: cover;
+
+}
+.out .list .yes{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: url("../../../static/yes.png") no-repeat;
+  background-size: cover;
+}
+.no,.yes{
+  display: inline-block;
+}
+.parent{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 90px;
 }

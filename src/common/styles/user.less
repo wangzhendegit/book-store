@@ -22,7 +22,8 @@
   height: 180px;
   background-image: url("../../assets/f1.jpg");
   background-size: cover;
-  filter: blur(3px);
+  //filter: blur(3px);
+  opacity: 0.6;
 }
 
 .user > ul {
@@ -105,20 +106,128 @@
 
 
 //注册页面设置
-.register{
+.registerBox{
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: #dddddd;
   opacity: 1;
-  text-align: center;
-  padding-top: 60px;
+  padding-top: 70px;
+  h1{
+   margin-left: 15%;
+    font: bold 25px '微软雅黑 Light';
+  }
   .userInformation{
-    margin-top: 80px;
+    padding-top: 50px;
+    width: 70%;
+    margin: 0 auto;
     div{
-      margin-top: 45px;
+      font: normal 15px '微软雅黑 Light';
+      margin-top: 25px;
     }
+    .verificationCode{
+      width: 170px;
+    }
+    .verificationButtom{
+      margin-left: 20px;
+     background-color: #ababab;
+      padding: 5px 0;
+    }
+    input{
+      font: normal 16px '微软雅黑 Light';
+      color: #8b8b8b;
+      padding: 5px 10px;
+      width: 200px;
+    }
+  }
+  button{
+    position: relative;
+    bottom: -60px;
+    left: 125px;
+    padding: 8px 20px;
+    background-color: #ababab;
   }
 }
 
+//登陆页面设置
+.landBox{
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  text-align: center;
+  .logo{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 20px auto;
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .phone,.psw{
+   height: 60px;
+    margin-top: 26px;
+    label{
+      font: normal 16px '微软雅黑 Light';
+    }
+    input{
+     padding: 5px 10px;
+      font: normal 17px '微软雅黑 Light';
+      color: #939393;
+    }
+  }
+  .londButton{
+    width: 80%;
+    height: 50px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 173, 0.68);
+    font: normal 20px '微软雅黑 Light';
+  }
+}
+
+//个人资料设置
+.personalData{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding-top: 25px;
+  h1{
+    margin-left: 35%;
+  }
+  div{
+    width: 72%;
+    margin: 26px auto;
+    font: normal 15px '微软雅黑 Light';
+    input{
+      font: normal 16px '微软雅黑 Light';
+      color: #939393;
+      padding: 6px 15px;
+    }
+  }
+  .jieshao>textarea{
+    font: normal 16px '微软雅黑 Light';
+    color: #939393;
+    margin-top: 15px;
+    width: 290px;
+    height: 100px;
+   border: 1px solid #8b8b8b;
+    padding: 10px 15px;
+  }
+  button{
+    position: relative;
+    margin-top: 20px;
+    left: 13%;
+    width: 100px;
+    height: 45px;
+    margin-left: 30px;
+    background-color: rgba(0, 180, 0, 0.95);
+    font: normal 20px '微软雅黑 Light';
+  }
+}

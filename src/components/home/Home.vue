@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <!--弹窗-->
-    <BoxInfo></BoxInfo>
-    <!--书籍详情页面-->
-    <BookDetails></BookDetails>
+    <!--&lt;!&ndash;弹窗&ndash;&gt;-->
+    <!--<BoxInfo></BoxInfo>-->
+    <!--&lt;!&ndash;书籍详情页面&ndash;&gt;-->
+    <!--<BookDetails></BookDetails>-->
     <!--banner-->
     <div class="swiper-container1 swiper1">
       <div class="swiper-wrapper">
