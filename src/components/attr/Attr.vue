@@ -7,8 +7,8 @@
 
       />
       <ShowData
-        :bookList="roleList"
-        :showList="matchingArr"/>
+        :book-list="roleList"
+        :show-list="getMatchingArr"/>
   </div>
 </template>
 
@@ -29,54 +29,59 @@
           {
             "name": "JavaScript高级程序设计",
             "author": "Nicholas C. Zakas",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/2.png",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "JVM高级特性与最佳实践（第2版）",
             "author": "周志明",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/1.jpg",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "JavaScript权威指南（第6版）",
             "author": "David Flanagan",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/3.jpg",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "编写高质量代码：改善Java程序的151个建议",
             "author": "秦小波",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/4.jpg",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "JavaScript语言精粹(修订版)",
             "author": "Douglas Crockford",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/1.jpg",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "深入理解ES6",
             "author": "Nicholas C. Zakas",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/2.png",
             "ido":"../../static/向右 (2).png"
           },
           {
             "name": "Java开发实战经典",
             "author": "李兴华",
-            "price":"￥30",
+            "price":"￥ 99.5",
             "photo":"../../../static/3.jpg",
             "ido":"../../static/向右 (2).png"
           }
         ],
         matchingArr:[]
+      }
+    },
+    computed: {
+      getMatchingArr() {
+        return this.matchingArr;
       }
     },
     methods:{
@@ -87,7 +92,10 @@
 //            console.log(reg.test(role.name))
             return reg.test(role.name)
           })
-          console.log(this.matchingArr)
+          setTimeout(() => {
+            console.log(this.matchingArr);
+          },1500)
+
         }
     }
   }
