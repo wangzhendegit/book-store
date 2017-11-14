@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-
 import home from '@/components/home/Home'
 import attr from '@/components/attr/Attr'
 import cart from '@/components/cart/Cart'
@@ -37,6 +36,5 @@ export default new Router({
       name: 'user',
       component: user
     }
-
   ]
 })
