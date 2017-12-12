@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <input v-model='search' />
+  <ul v-for="item in searchData ">
+    <li>{{item.name}},价格:￥{{item.price}}</li>
+  </ul>
+</div>
+
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      search: '',
+      products: [{
+        name: '苹果',
+        price: 25,
+        category: "水果"
+      }, {
+        name: '香蕉',
+        price: 15,
+        category: "水果"
+      }]
+    },
+    computed: {
+      searchData: function() {
+        var search = this.search;
+
+        if (search) {
+          return this.products.filter(function(product) {
+            return Object.keys(product).some(function(key) {
+              return String(product[key]).toLowerCase().indexOf(search) > -1
+            })
+          })
+        }
+
+        return this.products;
+      }
+    }
+  })
+</script>
+
+
+</body>
+</html>
