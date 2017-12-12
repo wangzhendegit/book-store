@@ -6,7 +6,6 @@
     </header>
     <main>
       <router-view/>
-
     </main>
     <nav>
       <ul>
