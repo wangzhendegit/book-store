@@ -44,7 +44,7 @@
     },
     methods: {
       bookInfoContent(index){
-        
+
       },
       swiperUser(){
 //        轮播图
