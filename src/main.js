@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import rem from './common/scripts/common.js'
 
-Vue.config.productionTip = false
+import '../node_modules/swiper/dist/css/swiper.min.css';
+
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
