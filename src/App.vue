@@ -5,7 +5,7 @@
       <h3 v-else>{{$route.params.title}}</h3>
     </header>
     <main>
-      <router-view/>
+      <router-view :bookInfo="bookInfo"/>
     </main>
     <nav>
       <ul>
@@ -36,14 +36,25 @@
     data(){
       return {
         mes: "",
-        navControl:true
+        navControl:true,
+        bookInfo:''
       }
     },
     methods: {
-      add(){
-//     axios.get()
+      getGlobalData(){
+      axios.get('../data.json').then(
+        (res) => {
+          this.bookInfo = res.data;
+        }
+      ).catch(function () {
+        console.error('数据请求错误')
+        })
       }
+    },
+    mounted(){
+      this.getGlobalData()
     }
+
   }
 </script>
 

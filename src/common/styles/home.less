@@ -1,4 +1,4 @@
-
+@white-color:#fff;
 .home {
   .news {
     border-radius: 1.7rem;
@@ -30,6 +30,44 @@
       color: orange;
       width: 20px;
       height: 20px;
+    }
+  }
+  .book-list{
+    margin-top: 0.3rem;
+    box-sizing: border-box;
+    padding: 0 3%;
+    background: @white-color;
+    h3{
+      line-height: 0.8rem;
+      padding: 0.6rem 0;
+    }
+    ul{
+      margin-bottom: 20px;
+      display: flex;
+      flex-flow: wrap;
+      align-content: flex-start;
+      li{
+        flex: 1 46%;
+        width: 46%;
+        &:nth-child(2n){
+          margin-left: 6%;
+        }
+        margin-top: 10px;
+        img{
+          object-fit:contain;
+          width: 100%;
+          height: 200px;
+        }
+        p{
+          color: red;
+        }
+        h5{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          color: #333333;
+        }
+      }
     }
   }
 }
