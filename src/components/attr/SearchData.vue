@@ -20,5 +20,5 @@
 <style scoped lang="less" rel="stylesheet/less">
 
   @import "../../common/styles/attr.less";
-  
+
 </style>
