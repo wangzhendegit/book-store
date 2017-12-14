@@ -74,8 +74,7 @@
     },
     methods: {
       bookInfoContent(index){
-        this.clickData = this.bookInfo[index]
-        console.log(this.bookInfo[index])
+        this.clickData = this.bookInfo[index];
         this.hiddenBoxStatus = true
       },
       closeBox(){
