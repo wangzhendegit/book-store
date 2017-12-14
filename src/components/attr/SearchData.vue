@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="searchBox">
-      <input type="search" :placeholder="placeholder" @keyup="$emit('valueToPatent',$event.target.value)"/>
+      <input type="text" :placeholder="placeholder" @keyup="$emit('valueToPatent',$event.target.value)"/>
     </div>
   </div>
 </template>
@@ -18,7 +18,5 @@
 </script>
 
 <style scoped lang="less" rel="stylesheet/less">
-
   @import "../../common/styles/attr.less";
-
 </style>

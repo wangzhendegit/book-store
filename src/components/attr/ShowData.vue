@@ -4,33 +4,33 @@
       <ul v-if='showList.length == 0'>
         <li v-for="role in bookList" :key="role.id">
           <img :src="role.photo">
-          <div class="right clearFloat">
-            <div class="book-name">{{role.name}}</div>
-            <div class="book-author">{{role.author}}</div>
-            <div class="book-price">{{role.price}}</div>
-            <div class="ido">
-              <img :src=role.ido alt="">
-            </div>
+          <div class="right">
+            <h5 class="book-name">{{role.name}}</h5>
+            <p class="book-author">{{role.author}}</p>
+            <p class="book-price">{{role.price}}</p>
+          </div>
+          <div class="ido">
+            <img :src=role.ido alt="">
           </div>
         </li>
-
       </ul>
 
       <ul v-else>
-        <li v-for="item in showList" :key="item.id">
-          <img :src="item.photo" alt="">
-          <div class="right clearFloat">
-            <div class="book-name">{{item.name}}</div>
-            <div class="book-author">{{item.author}}</div>
-            <div class="book-price">{{item.price}}</div>
-            <div class="ido">
-              <img :src=item.ido alt="">
-            </div>
-        </div>
-      </li>
+        <li v-for="role in showList" :key="role.id">
+          <img :src="role.photo">
+          <div class="right">
+            <h5 class="book-name">{{role.name}}</h5>
+            <p class="book-author">{{role.author}}</p>
+            <p class="book-price">{{role.price}}</p>
+          </div>
+          <!--<div class="ido">-->
+          <!--<img :src=role.ido alt="">-->
+          <!--</div>-->
+        </li>
     </ul>
   </div>
-    </div>
+    <p>别滑了，没有了~</p>
+  </div>
 </template>
 <script>
 
