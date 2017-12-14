@@ -110,21 +110,49 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  background-color: #dddddd;
-  opacity: 1;
-  padding-top: 70px;
+  height: calc(100%- 7.5rem);
+  border-bottom: 1px solid #6e6e6e;
+  background-color: white;
   h1{
-   margin-left: 15%;
-    font: bold 25px '微软雅黑 Light';
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    background-color: #333333;
+    color: white;
+    font: normal 18px '微软雅黑 Light';
+    margin-bottom: 30px;
   }
   .userInformation{
-    padding-top: 50px;
-    width: 70%;
+   width: 100%;
     margin: 0 auto;
     div{
-      font: normal 15px '微软雅黑 Light';
-      margin-top: 25px;
+      width: 85%;
+      height: 50px;
+      margin: 10px auto;
+      border-bottom: 1px solid #6e6e6e;
+      text-align: left;
+      padding-bottom: 60px;
+      label{
+        font: normal 16px '微软雅黑 Light';
+        position: relative;
+        top: -2px;
+        img{
+          margin-left: 10px;
+          width: 20px;
+          height: 20px;
+          position: relative;
+          top: 8px;
+          margin-top: 15px;
+        }
+      }
+      p{
+        font: normal 14px '微软雅黑 Light';
+        color: red;
+        margin-left: 15%;
+        position: relative;
+        top: 20px;
+      }
     }
     .verificationCode{
       width: 170px;
@@ -135,58 +163,85 @@
       padding: 5px 0;
     }
     input{
-      font: normal 16px '微软雅黑 Light';
-      color: #8b8b8b;
+      position: relative;
+      top: 5px;
+      width: 80%;
       padding: 5px 10px;
-      width: 200px;
+      font: normal 15px '微软雅黑 Light';
+      color: #5d5d5d;
+      border: none;
+      outline: medium;
     }
   }
   button{
-    position: relative;
-    bottom: -60px;
-    left: 125px;
-    padding: 8px 20px;
-    background-color: #ababab;
+    border: none;
+    width: 85%;
+    height: 50px;
+    margin: 30px auto;
+    background-color: #f10215;
+    font: normal 18px '微软雅黑 Light';
+    color: white;
+    margin-left: 8%;
   }
 }
 
 //登陆页面设置
 .landBox{
-  padding-top: 70px;
   width: 100%;
-  height: 100%;
+  height: calc(100%- 7.5rem);
+  border-bottom: 1px solid #6e6e6e;
   position: absolute;
   top: 0;
   background-color: white;
   text-align: center;
-  .logo{
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    margin: 20px auto;
-    img{
-      width: 150px;
-      height: 150px;
+    h1{
+      width: 100%;
+      height: 50px;
+     padding-top: 10px;
+      background-color: #333333;
+      color: white;
+      font: normal 18px '微软雅黑 Light';
+      margin-bottom: 30px;
     }
-  }
-  .phone,.psw{
-   height: 60px;
-    margin-top: 26px;
+  div{
+    width: 85%;
+    height: 50px;
+    margin: 0 auto;
+    border-bottom: 1px solid #6e6e6e;
+    text-align: left;
+    padding-bottom: 60px;
     label{
       font: normal 16px '微软雅黑 Light';
+      position: relative;
+      top: 1px;
+      img{
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 8px;
+        margin-top: 15px;
+      }
     }
     input{
-     padding: 5px 10px;
-      font: normal 17px '微软雅黑 Light';
-      color: #939393;
+      position: relative;
+      top: 5px;
+      width: 80%;
+      padding: 5px 10px;
+      font: normal 15px '微软雅黑 Light';
+      color: #5d5d5d;
+       border: none;
+       outline: medium;
     }
   }
   .londButton{
-    width: 80%;
+    border: none;
+    width: 85%;
     height: 50px;
-    margin: 50px auto;
-    background-color: rgba(0, 0, 173, 0.68);
-    font: normal 20px '微软雅黑 Light';
+    margin: 30px auto;
+    background-color: #f10215;
+    font: normal 18px '微软雅黑 Light';
+    color: white;
   }
 }
 
@@ -230,4 +285,9 @@
     background-color: rgba(0, 180, 0, 0.95);
     font: normal 20px '微软雅黑 Light';
   }
+}
+
+
+.dis{
+
 }
