@@ -1,22 +1,6 @@
 <template>
   <div class="home">
-    <!--弹窗-->
-    <transition name="fade">
-      <BoxInfo
-        :clickData='clickData'
-        @closeBox="closeBox"
-        v-if="hiddenBoxStatus"
-        @clickDetails="clickDetails"
-      ></BoxInfo>
-    </transition>
-    <!--书籍详情页面-->
-    <transition name="slide-fade">
-      <BookDetails
-        v-if="showBook"
-        @backHome="backHome"
-        :clickData='clickData'
-      ></BookDetails>
-    </transition>
+
     <!--banner-->
     <div class="swiper-container1 swiper1">
       <div class="swiper-wrapper">
