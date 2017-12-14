@@ -2,7 +2,7 @@
   <div>
       <h3>{{title}}</h3>
       <ul>
-        <li v-for="(item,index) in bookInfo" :key="item.id" @click="bookInfoContent(index)">
+        <li v-for="(item,index) in bookInfo" :key="item.id" @click="$emit('bookInfoContent',index)">
           <img :src="item.img" alt="">
           <h5>{{item.name}}</h5>
           <p>￥{{item.price}}.00</p>

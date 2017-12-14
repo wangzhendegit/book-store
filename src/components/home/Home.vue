@@ -1,9 +1,22 @@
 <template>
   <div class="home">
-    <!--&lt;!&ndash;弹窗&ndash;&gt;-->
-    <!--<BoxInfo></BoxInfo>-->
-    <!--&lt;!&ndash;书籍详情页面&ndash;&gt;-->
-    <!--<BookDetails></BookDetails>-->
+    <!--弹窗-->
+    <transition name="fade">
+      <BoxInfo
+        :clickData='clickData'
+        @closeBox="closeBox"
+        v-if="hiddenBoxStatus"
+        @clickDetails="clickDetails"
+      ></BoxInfo>
+    </transition>
+    <!--书籍详情页面-->
+    <transition name="slide-fade">
+      <BookDetails
+        v-if="showBook"
+        @backHome="backHome"
+        :clickData='clickData'
+      ></BookDetails>
+    </transition>
     <!--banner-->
     <div class="swiper-container1 swiper1">
       <div class="swiper-wrapper">
@@ -23,8 +36,8 @@
     <!--图书列表-->
     <div class="book-list">
       <BookList
-        :bookInfoContent="bookInfoContent"
         v-for='item in bookAttrTitle'
+        @bookInfoContent="bookInfoContent"
         :title="item"
         :bookInfo="bookInfo"
         :key="item.id">
@@ -41,7 +54,7 @@
   import BookList from '@/components/home/Book'
 
   export default {
-    props: ['bookInfo','BoxInfo'],
+    props: ['bookInfo', 'BoxInfo'],
     components: {
       BookList,
       BoxInfo,
@@ -50,16 +63,30 @@
     name: 'home',
     data () {
       return {
+        clickData:'',
+        showBook:false,
+        hiddenBoxStatus: false,
         bookAttrTitle: ['新书上架', '编辑推荐', '热门新书'],
-        msg: '这是首页页面',
         title: '掌上商城',
         imgUrl: ['./../../../static/banner1.png', './../../../static/banner2.png', './../../../static/banner3.png'],
-        newsData: ['这是新闻一qqqqqqqqqqqqqqqqqqsdah安徽省多拉回家四大皆空施蒂利克骄傲施蒂利克', '这是新闻二', '这是新闻三', '这是新闻四']
+        newsData: ['这是新闻一安徽省多拉回家四大皆空施蒂利克骄傲施蒂利克', '这是新闻二', '这是新闻三', '这是新闻四']
       }
     },
     methods: {
       bookInfoContent(index){
-
+        this.clickData = this.bookInfo[index]
+        console.log(this.bookInfo[index])
+        this.hiddenBoxStatus = true
+      },
+      closeBox(){
+        this.hiddenBoxStatus = false
+      },
+      backHome(){
+        this.showBook = false;
+      },
+      clickDetails(){
+        this.hiddenBoxStatus = false
+        this.showBook = true;
       },
       swiperUser(){
 //        轮播图
@@ -102,5 +129,4 @@
 
 <style scoped lang="less">
   @import "../../common/styles/home.less";
-  @import "../../common/styles/homeList.less";
 </style>

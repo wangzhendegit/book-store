@@ -1,7 +1,7 @@
 <template>
   <div class="book-details">
     <header>
-      <span class="iconfont">&#xe6e3;</span>
+      <span class="iconfont" @click="$emit('backHome')">&#xe6e3;</span>
       <h3>图书详情页</h3>
       <span class="iconfont">&#xe613;</span>
     </header>
@@ -9,17 +9,17 @@
       <div class="book-details-top">
         <div class="book-details-info">
           <div>
-            <img src="../../../static/1.jpg" alt="">
+            <img :src="clickData.img" alt="">
           </div>
           <ul>
-            <li><span>作者</span><span>Nicholas C. Zakas</span></li>
+            <li><span>作者</span><span>{{clickData.author}}</span></li>
             <li><span>页数</span><span>730</span></li>
             <li><span>书号</span><span>B00CBBJS5Y</span></li>
             <li><span>出版日期</span><span>2012年3月1日</span></li>
-            <li><span>售价</span><span>￥55.00</span></li>
+            <li><span>售价</span><span>￥{{clickData.price}}.00</span></li>
           </ul>
         </div>
-        <div><h5>javascrit高级设计程序</h5></div>
+        <div><h5>{{clickData.name}}</h5></div>
         <div class="box-btn">
           <span>加入购车</span>
           <span>立即购买</span>
@@ -55,11 +55,17 @@
 
 <script>
   export default {
+    props:['clickData'],
     name: 'home',
     data () {
-      return {}
+      return {
+        data:''
+      }
     },
     methods:{
+
+    },
+    created() {
 
     }
   }
