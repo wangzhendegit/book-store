@@ -5,9 +5,7 @@
       <h3 v-else>{{$route.params.title}}</h3>
     </header>
     <main>
-
       <router-view :bookInfo="bookInfo"/>
-
     </main>
     <nav>
       <ul>

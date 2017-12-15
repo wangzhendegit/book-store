@@ -1,140 +1,304 @@
-.pic{
-  width: 90px;
-  height: 120px;
-  margin: 10px;
-}
-.ido img{
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 5px;
-  top: 45px;
-}
-.clearFloat{
-  zoom: 1;
-}
-.clearFloat:after{
-  content: "";
-  display: block;
-  visibility: hidden;
-  height: 0;
-  clear: both;
-}
-.right{
-  //border: 1px solid black;
-  width: 250px;
-  height: 120px;
-  float: right;
-  padding-top: 10px;
-  position: relative;
-}
-.show li{
-  border-bottom: 1px solid #9d9d9d;
-  padding-top: 10px;
 
-}
-.list{
-  padding-top: 30px;
-}
-.right .book-name{
-  font-size: 18px;
-  color: #3366CC;
-  padding: 10px 0px;
-}
-.right .book-price{
-  font-size: 23px;
-  color: #CC6633;
-  padding: 10px 0px;
-  font-weight: bold;
-}
-.button{
-  width: 95%;
-  height: 50px;
-  background-color: #f10215;
-  border-radius: 7px;
-  margin: 10px auto;
-  text-align: center;
-}
-.button p{
-  width: 360px;
-  height: 50px;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 50px;
-  color: white;
-}
-.dele{
-  width: 60px;
-  height: 30px;
-  position: absolute;
-  right: 0px;
-  top: 60px;
-}
-.dele .del{
-  display: inline-block;
-  font-size: 18px;
-  color: #4D6CB0;
-}
-.dele .del:hover{
-  cursor: pointer;
-}
-.out .list .right{
-  width: 230px;
-  height: 120px;
-}
-.out .list li{
-  border-bottom: 1px solid #9d9d9d;
-  position: relative;
-}
-.checkbox{
-  position: absolute;
-  top: 70px;
-  left: 0px;
-}
-.out .list img{
-  padding-left: 30px;
-  padding-top: 10px;
-}
-.edit{
-  width: 150px;
-  height: 30px;
-  position: absolute;
-  right: 0px;
-  top: 60px;
-}
-.edit .cancel,.check{
-  display: inline-block;
-  font-size: 16px;
-  color: #4D6CB0;
-}
-.edit .cancel,.check:hover{
-  cursor: pointer;
-}
-.edit .check{
-  padding-left: 20px;
-  color: #FF6835;
-}
-.out .list .no{
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  background: url("../../../static/no.png") no-repeat;
-  background-size: cover;
+.cart{
+  .list{
+    .edit{
+      & > div label {
+        input{
+          margin-right: 4px;
+        }
+        font-size:0.7rem;
+        display: flex;
+        align-items: center;
+      }
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 2rem;
+      background: #f9f9f9;
+      p{
+        font-size:0.7rem;
+      }
+    }
+    .show-cart{
+      padding-bottom: calc(~'2rem - 1px');
+      & > P {
+        line-height: 2rem;
+        background: #f7f7f7;
+        text-align: center;
+        color: #999999;
+      }
+      background: #ffffff;
+      ul{
+        padding: 0 16px;
+        li{
+          position: relative;
+          &:last-child{
+            border-bottom:none
+          }
+          padding: 0.8rem 0;
+          border-bottom: 1px solid #f7f7f7;
+          display: flex;
+          & > div{
+            width: 10%;
+          }
+          img{
+            width: 26%;
+            height: 100%;
+            object-fit: contain;
+          }
+          .right{
+            width: 58%;
+            margin-left: 6%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            .book-some{
+              p,h5{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+              h5{
+                font-size:0.8rem;
+                font-weight: 400;
+                color: #333;
+              }
+              .book-author {
+                color: #999;
+                font-size: 0.7rem;
+                line-height: 1rem;
+              }
+            }
+            .book-price-cart{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+                p:first-child{
+                  color: #f10215;
+                  font-size:0.7rem;
+                  line-height: 1rem;
+                }
+                .book-cart-num{
+                text-align: right;
+                font-size:0;
+                button{
+                  text-align: center;
+                  line-height: 1rem;
+                  border: 1px solid #cccccc;
+                  background: #ffffff;
+                  width: 1rem;
+                  height: 1rem;
+                  outline: none;
+                }
+                input{
+                  outline: none;
+                  width: 1rem;
+                  height: 1rem;
+                  text-align: center;
+                }
+              }
+            }
 
+          }
+          .ido{
+            width: 0.6rem;
+            height: 0.6rem;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+    .btn{
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 2rem;
+      background: #ffffff;
+      border-bottom:1px solid #f7f7f7;
+      border-top:1px solid #f7f7f7;
+      position: fixed;
+      bottom: calc(~'2.2rem - 1px');
+      p{
+        line-height: 2rem;
+        padding: 0 0 0 16px;
+        width: 70%;
+        font-size:0.7rem;
+      }
+      button{
+        width: 30%;
+        height: 2rem;
+        border-radius: 0;
+        border: 0;
+        outline: none;
+        color: #ffffff;
+        font-size:0.7rem;
+        font-weight: 600;
+        text-align: center;
+        &.count{
+          background: #f10215;
+        }
+        &.delete{
+          margin-right:16px;
+          background: #fff;
+          color: #f10215;
+          height: 1.2rem;
+          border-radius: 0.6rem;
+          border: 1px solid #f10215;
+        }
+      }
+    }
+  }
 }
-.out .list .yes{
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  background: url("../../../static/yes.png") no-repeat;
-  background-size: cover;
-}
-.no,.yes{
-  display: inline-block;
-}
-.parent{
-  position: relative;
-  width: 30px;
-  height: 30px;
-  top: 90px;
-}
+
+
+//.pic{
+//  width: 90px;
+//  height: 120px;
+//  margin: 10px;
+//}
+//.ido img{
+//  width: 20px;
+//  height: 20px;
+//  position: absolute;
+//  right: 5px;
+//  top: 45px;
+//}
+//.clearFloat{
+//  zoom: 1;
+//}
+//.clearFloat:after{
+//  content: "";
+//  display: block;
+//  visibility: hidden;
+//  height: 0;
+//  clear: both;
+//}
+//.right{
+//  //border: 1px solid black;
+//  width: 250px;
+//  height: 120px;
+//  float: right;
+//  padding-top: 10px;
+//  position: relative;
+//}
+//.show li{
+//  border-bottom: 1px solid #9d9d9d;
+//  padding-top: 10px;
+//
+//}
+//.list{
+//  padding-top: 30px;
+//}
+//.right .book-name{
+//  font-size: 18px;
+//  color: #3366CC;
+//  padding: 10px 0px;
+//}
+//.right .book-price{
+//  font-size: 23px;
+//  color: #CC6633;
+//  padding: 10px 0px;
+//  font-weight: bold;
+//}
+//.button{
+//  width: 95%;
+//  height: 50px;
+//  background-color: #f10215;
+//  border-radius: 7px;
+//  margin: 10px auto;
+//  text-align: center;
+//}
+//.button p{
+//  width: 360px;
+//  height: 50px;
+//  font-size: 18px;
+//  font-weight: bold;
+//  line-height: 50px;
+//  color: white;
+//}
+//.dele{
+//  width: 60px;
+//  height: 30px;
+//  position: absolute;
+//  right: 0px;
+//  top: 60px;
+//}
+//.dele .del{
+//  display: inline-block;
+//  font-size: 18px;
+//  color: #4D6CB0;
+//}
+//.dele .del:hover{
+//  cursor: pointer;
+//}
+//.out .list .right{
+//  width: 230px;
+//  height: 120px;
+//}
+//.out .list li{
+//  border-bottom: 1px solid #9d9d9d;
+//  position: relative;
+//}
+//.checkbox{
+//  position: absolute;
+//  top: 70px;
+//  left: 0px;
+//}
+//.out .list img{
+//  padding-left: 30px;
+//  padding-top: 10px;
+//}
+//.edit{
+//  width: 150px;
+//  height: 30px;
+//  position: absolute;
+//  right: 0px;
+//  top: 60px;
+//}
+//.edit .cancel,.check{
+//  display: inline-block;
+//  font-size: 16px;
+//  color: #4D6CB0;
+//}
+//.edit .cancel,.check:hover{
+//  cursor: pointer;
+//}
+//.edit .check{
+//  padding-left: 20px;
+//  color: #FF6835;
+//}
+//.out .list .no{
+//  width: 30px;
+//  height: 30px;
+//  position: absolute;
+//  background: url("../../../static/no.png") no-repeat;
+//  background-size: cover;
+//
+//}
+//.out .list .yes{
+//  width: 30px;
+//  height: 30px;
+//  position: absolute;
+//  background: url("../../../static/yes.png") no-repeat;
+//  background-size: cover;
+//}
+//.no,.yes{
+//  display: inline-block;
+//}
+//.parent{
+//  position: relative;
+//  width: 30px;
+//  height: 30px;
+//  top: 90px;
+//}
