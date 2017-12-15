@@ -9,7 +9,6 @@
         </div>
         <p @click="cartEdit" v-if="status">编辑</p>
         <p v-else @click="cartEdit">完成</p>
-
       </div>
       <div class="show-cart">
         <ul>
@@ -41,20 +40,33 @@
       </div>
       <div class="btn">
         <p>合计：<span>￥0.00</span></p>
-        <button type="button" @click="" v-if="status" :class="{count: status }">去支付</button>
+        <button type="button" @click="goPay" v-if="status" :class="{count: status }">去支付</button>
         <button type="button" v-else :class="{ delete: !status }">删除</button>
       </div>
+
     </div>
+    <transition name="slide-fade">
+      <GoPay
+       v-if="showPay"
+       @back="back"
+      ></GoPay>
+    </transition>
   </div>
 
 
 </template>
 
 <script>
+  import GoPay from '@/components/cart/pay'
+
   export default {
     name: 'cart',
+    components:{
+      GoPay
+    },
     data () {
       return {
+        showPay:true,
         revise:false,
         status:true,
         roleList:[
@@ -87,18 +99,6 @@
             "ido":"../../static/right.png",
           }
         ],
-
-        infoList:
-          {
-            "total": "￥ 128.60",
-            "transport": "￥ 10",
-            "and": "￥ 138.60",
-            "address": "四川省 成都市 高新区 锦城大道东段拉德方斯东楼10层2号",
-            "person": "从来不吃草莓",
-            "zip": "61000",
-            "phone": "18******7687"
-          },
-
         cartNum:[],
         num:2
 
@@ -114,18 +114,24 @@
       }
 
     },
-    methods:{
+    methods: {
       subNum(index){
-        this.roleList[index].num = this.num;
-        console.log(this.roleList)
-        return this.roleList[index].num -= 1
+
       },
       addNum(index){
         return this.num += 1
       },
 
+      cartEdit(){
 
+      },
+      back(){
+        this.showPay = false
+      },
+      goPay(){
+        this.showPay = true
       }
+    }
 
   }
 </script>

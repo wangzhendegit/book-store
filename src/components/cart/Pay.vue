@@ -1,5 +1,10 @@
 <template>
-  <div class="pahment" v-if="status2">
+  <div class="pahment">
+    <header>
+      <span class="iconfont" @click="$emit('back')">&#xe6e3;</span>
+      <h3>去支付</h3>
+      <span class="iconfont">&#xe613;</span>
+    </header>
     <!--商品信息确认-->
     <div class="ok">
       <h3>商品信息确认</h3>
@@ -7,22 +12,22 @@
         <ul>
           <li>
             <h5>价格信息</h5>
-            <p>商品总价 :<span>{{infoList.total}}</span> </p>
-            <p>运送费 :<span>{{infoList.transport}}</span> </p>
-            <h5>订单总计 :<span style="color: #CC6633;font-weight: bold">{{infoList.and}}</span> </h5>
+            <p>商品总价 :<span></span> </p>
+            <p>运送费 :<span></span> </p>
+            <h5>订单总计 :<span style="color: #CC6633;font-weight: bold"></span> </h5>
           </li>
           <li>
             <h3>收货信息</h3>
-            <p>收货地址 :<span>{{infoList.address}}</span> </p>
-            <p>收货人 :<span>{{infoList.person}}</span> </p>
-            <p>邮编 :<span>{{infoList.zip}}</span> </p>
-            <p>电话 :<span>{{infoList.phone}}</span> </p>
+            <p>收货地址 :<span></span> </p>
+            <p>收货人 :<span></span> </p>
+            <p>邮编 :<span></span> </p>
+            <p>电话 :<span></span> </p>
           </li>
-          <li class="change-address" @click="revise1">
+          <li class="change-address">
             <h3>修改地址</h3>
             <img src="../../../static/right.png" alt="">
           </li>
-          <li class="change-address" @click="revise1">
+          <li class="change-address">
             <h3>新增地址</h3>
             <img src="../../../static/right.png" alt="">
           </li>
@@ -60,7 +65,7 @@
     </div>
 
     <!--修改新增地址-->
-    <div class="revise" v-if="revise">
+    <div class="revise">
       <ul>
         <li><p>姓名 :<input type="text" placeholder="请填写您的真实姓名"></p></li>
         <li><p>联系电话 : <input type="text" placeholder="请填写我们联系您的电话号码"></p></li>
@@ -106,6 +111,6 @@
     }
   }
 </script>
-<style scoped>
-
+<style scoped lang="less">
+@import "../../common/styles/pay.less";
 </style>
