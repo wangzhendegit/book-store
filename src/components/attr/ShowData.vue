@@ -1,36 +1,37 @@
 <template>
   <div class="show">
     <div>
+      <!--用v-if去判断传进来的showList的长度是否为0 如果为零表示没有在搜索状态，显示默认的数据列表bookList，如果不为零那么就显示过滤之后穿过的的showList-->
       <ul v-if='showList.length == 0'>
-        <li v-for="role in bookList" :key="role.id">
-          <img :src="role.photo">
-          <div class="right clearFloat">
-            <div class="book-name">{{role.name}}</div>
-            <div class="book-author">{{role.author}}</div>
-            <div class="book-price">{{role.price}}</div>
-            <div class="ido">
-              <img :src=role.ido alt="">
-            </div>
+        <li v-for="(role,index) in bookList" :key="role.id" @click="$emit('clickBook',index)">
+          <img :src="role.img">
+          <div class="right">
+            <h5 class="book-name">{{role.name}}</h5>
+            <p class="book-author">{{role.author}}</p>
+            <p class="book-price">￥{{role.price}}.00</p>
+          </div>
+          <div class="ido">
+            <img src='../../../static/right.png' alt="">
           </div>
         </li>
-
       </ul>
 
       <ul v-else>
-        <li v-for="item in showList" :key="item.id">
-          <img :src="item.photo" alt="">
-          <div class="right clearFloat">
-            <div class="book-name">{{item.name}}</div>
-            <div class="book-author">{{item.author}}</div>
-            <div class="book-price">{{item.price}}</div>
-            <div class="ido">
-              <img :src=item.ido alt="">
-            </div>
-        </div>
-      </li>
+        <li v-for="(role,index) in showList" :key="role.id" @click="$emit('clickBook',index)">
+          <img :src="role.img">
+          <div class="right">
+            <h5 class="book-name">{{role.name}}</h5>
+            <p class="book-author">{{role.author}}</p>
+            <p class="book-price">￥{{role.price}}.00</p>
+          </div>
+          <div class="ido">
+            <img src='../../../static/right.png' alt="">
+          </div>
+        </li>
     </ul>
   </div>
-    </div>
+    <p>别滑了，没有了~</p>
+  </div>
 </template>
 <script>
 
@@ -47,5 +48,4 @@
 <style scoped lang="less" rel="stylesheet/less">
   @import "../../common/styles/attr.less";
 
-  @import "../../common/styles/attr.less";
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="book-details">
     <header>
-      <span class="iconfont" @click="$emit('backHome')">&#xe6e3;</span>
+      <span class="iconfont" @click="$emit('back')">&#xe6e3;</span>
       <h3>图书详情页</h3>
       <span class="iconfont">&#xe613;</span>
     </header>

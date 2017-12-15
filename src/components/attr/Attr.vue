@@ -8,23 +8,38 @@
 
       />
       <ShowData
-        :book-list="roleList"
-        :show-list="getMatchingArr"/>
+        :book-list= this.bookInfo
+        :show-list="getMatchingArr"
+        @clickBook = 'clickBook'
+      />
+    <!--书籍详情页面-->
+    <transition name="slide-fade">
+      <BookListAttr
+        v-if="showBook"
+        :clickData="clickData"
+        :bookInfo='bookInfo'
+        @back="back"
+      ></BookListAttr>
+    </transition>
   </div>
 </template>
 
 <script>
   import SearchData from "./SearchData"
   import ShowData from "./ShowData"
+  import BookListAttr from '@/components/home/BookDetails'
 
   export default {
+    props:['bookInfo'],
     name: 'attr',
     components: {
       SearchData,
-      ShowData
+      ShowData,
+      BookListAttr
     },
     data () {
       return {
+        showBook:false,
         test: {},
         roleList: [
           {
@@ -91,7 +106,8 @@
 
           }
         ],
-        matchingArr: []
+        matchingArr: [],
+        clickData:'',
       }
     },
     computed: {
@@ -100,9 +116,16 @@
       }
     },
     methods:{
+      clickBook(index){
+        this.clickData = this.bookInfo[index];
+        this.showBook = true
+      },
+      back(){
+        this.showBook = false
+      },
         getValue(val){
 
-        this.matchingArr = this.roleList.filter(function (role) {
+        this.matchingArr = this.bookInfo.filter(function (role) {
           var reg = new RegExp(val, "ig");
 //            console.log(reg.test(role.name))
             return reg.test(role.name)

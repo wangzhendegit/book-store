@@ -13,7 +13,7 @@
     <transition name="slide-fade">
       <BookDetails
         v-if="showBook"
-        @backHome="backHome"
+        @back="back"
         :clickData='clickData'
       ></BookDetails>
     </transition>
@@ -80,7 +80,7 @@
       closeBox(){
         this.hiddenBoxStatus = false
       },
-      backHome(){
+      back(){
         this.showBook = false;
       },
       clickDetails(){
