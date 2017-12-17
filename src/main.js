@@ -9,24 +9,14 @@ import '../node_modules/swiper/dist/css/swiper.min.css';
 
 Vue.config.productionTip = false;
 
-// window.bookInfo = [];
-// getData()
-// function getData() {
-//   // 使用axios进行数据请求
-//   axios.get('https://www.aulence.com/data/book-info.json')
-//     .then((res) => {
-//       // 如果请求成功，将bookList空数组替换为请求到的数组
-//       window.bookInfo = res.data;
-//     })
-//     .catch(function () {
-//       console.error('数据请求错误');
-//     });
-// }
-/* eslint-disable no-new */
+import store from './store/common.js'
+
 const vm = new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: {App},
 })
+
 
