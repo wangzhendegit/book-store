@@ -21,11 +21,11 @@
           </div>
         </div>
         <div class="book-price">
-          <div>￥{{clickData.price}}.00</div>
+          <div>￥{{clickData.price | money}}</div>
           <div>1本</div>
         </div>
         <div class="box-btn">
-          <span>加入购车</span>
+          <span @click="$emit('joinCart')" >加入购车</span>
           <span>立即购买</span>
         </div>
       </div>
@@ -40,9 +40,26 @@
       return {}
     },
     methods:{
-      clickDetails(){
-
-      }
+//      joinCart(clickData){
+//        var arr;
+//        if(localStorage.cartBook){
+//          arr = JSON.parse(localStorage.cartBook)
+//        }else {
+//          arr = []
+//        }
+//        clickData.checked = false;
+//        clickData.productNum = 1;
+//        for(var i=0; i<arr.length;i++){
+//          if(arr[i].id === clickData.id){
+//            return alert('已经添加过该商品了')
+//          }
+//        }
+//        arr.push(clickData)
+//
+//        localStorage.cartBook = JSON.stringify(arr);
+//        alert('成功添加到购物车')
+//        this.$router.push({path:'/cart'})
+//      }
     }
   }
 </script>

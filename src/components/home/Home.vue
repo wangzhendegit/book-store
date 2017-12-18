@@ -3,6 +3,7 @@
     <!--弹窗-->
     <transition name="fade">
       <BoxInfo
+        @joinCart="joinCart"
         :clickData='clickData'
         @closeBox="closeBox"
         v-if="hiddenBoxStatus"
@@ -12,6 +13,7 @@
     <!--书籍详情页面-->
     <transition name="slide-fade">
       <BookDetails
+        @joinCart="joinCart"
         v-if="showBook"
         @back="back"
         :clickData='clickData'
@@ -40,10 +42,11 @@
         @bookInfoContent="bookInfoContent"
         :title="item"
         :bookInfo="bookInfo"
-        :key="item.id">
+        :key="item.id"
+      >
       </BookList>
     </div>
-
+    <p>别滑了，没有了~</p>
   </div>
 </template>
 
@@ -73,6 +76,26 @@
       }
     },
     methods: {
+      joinCart(){
+        var arr;
+        if(localStorage.joinCartBook){
+          arr = JSON.parse(localStorage.joinCartBook)
+        }else {
+          arr = []
+        }
+        this.clickData.checked = false;
+        this.clickData.productNum = 1;
+        for(var i=0; i<arr.length;i++){
+          if(arr[i].id === this.clickData.id){
+            return alert('已经添加过该商品了')
+          }
+        }
+        arr.push(this.clickData)
+//
+        localStorage.joinCartBook = JSON.stringify(arr);
+        alert('成功添加到购物车')
+        this.$router.push({path:'/cart'})
+      },
       bookInfoContent(index){
         this.clickData = this.bookInfo[index];
         this.hiddenBoxStatus = true

@@ -8,7 +8,7 @@
           <div class="right">
             <h5 class="book-name">{{role.name}}</h5>
             <p class="book-author">{{role.author}}</p>
-            <p class="book-price">￥{{role.price}}.00</p>
+            <p class="book-price">￥{{role.price}}</p>
           </div>
           <div class="ido">
             <img src='../../../static/right.png' alt="">

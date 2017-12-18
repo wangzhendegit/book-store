@@ -5,7 +5,7 @@
         <li v-for="(item,index) in bookInfo" :key="item.id" @click="$emit('bookInfoContent',index)">
           <img :src="item.img" alt="">
           <h5>{{item.name}}</h5>
-          <p>￥{{item.price}}.00</p>
+          <p>￥{{item.price | money }}</p>
         </li>
         <!--<li>-->
           <!--<img src="../../../static/book2.jpg" alt="">-->
@@ -28,6 +28,7 @@
 
 <script>
   import Swiper from 'swiper';
+  import filter from '../../common/scripts/filters'
   export default {
     props:['bookInfo','title'],
     name: 'home',

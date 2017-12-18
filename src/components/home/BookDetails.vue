@@ -16,12 +16,12 @@
             <li><span>页数</span><span>730</span></li>
             <li><span>书号</span><span>B00CBBJS5Y</span></li>
             <li><span>出版日期</span><span>2012年3月1日</span></li>
-            <li><span>售价</span><span>￥{{clickData.price}}.00</span></li>
+            <li><span>售价</span><span>￥{{clickData.price}}</span></li>
           </ul>
         </div>
         <div><h5>{{clickData.name}}</h5></div>
         <div class="box-btn">
-          <span>加入购车</span>
+          <span @click="$emit('joinCart')">加入购车</span>
           <span>立即购买</span>
         </div>
       </div>
@@ -149,7 +149,7 @@
             width: 48%;
             box-sizing: border-box;
             display: inline-block;
-            font-size:0.8rem;
+            font-size:0.7rem;
             font-weight: 500;
             border-radius: 4px;
           }
